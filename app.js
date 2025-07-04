@@ -33,9 +33,9 @@ app.post('/api/registrarDate', (req, res) => {
     res.json(datos);
 });
 const libros = [
-    { id: 1, nombre: 'Harry Potter y la piedra filosofal',priceCaratulaDura:30, priceCaratulaBlanda:15},
-    { id: 1, nombre: 'El señor de los anillos',priceCaratulaDura:30, priceCaratulaBlanda:15},
-    { id: 1, nombre: 'Harry Potter y la piedra filosofal',priceCaratulaDura:30, priceCaratulaBlanda:15},
+    { id: 1, nombre: 'Harry Potter y la piedra filosofal',author:"Juan", priceCaratulaDura:30, priceCaratulaBlanda:15,year: 2010,resume:'aaaaa'},
+    { id: 1, nombre: 'El señor de los anillos',author:"Pepe",priceCaratulaDura:30, priceCaratulaBlanda:15,year: 2010,resume:'aaaaa'},
+    { id: 1, nombre: 'Harry Potter y la piedra filosofal',author:"Maria",priceCaratulaDura:30, priceCaratulaBlanda:15,year: 2010,resume:'aaaaa'},
 
 ];
 app.get('/api/libros',(req, res)=>
@@ -56,17 +56,6 @@ app.get('/api/libro/:name', (req, res) => {
     }
 });
 
-// Ruta POST que recibe y devuelve JSON
-// app.post('/api/reservar', (req, res) => {
-//     const nuevoProducto = {
-//         id: Math.floor(Math.random() * 1000),
-//         nombre: req.body.nombre,
-//         precio: req.body.precio,
-//         fechaCreacion: new Date().toISOString()
-//     };
-//
-//     res.status(201).json(nuevoProducto);
-// });
 
 // Iniciar el servidor
 app.listen(PORT, () => {
